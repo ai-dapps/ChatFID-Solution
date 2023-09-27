@@ -1,0 +1,12 @@
+@import "./variable";
+@import "./mixin";
+
+.SignUp {
+  color: #222;
+  font-size: 100px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+}

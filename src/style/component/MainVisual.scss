@@ -1,0 +1,122 @@
+@import "./variable";
+@import "./mixin";
+
+.MainVisual {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* 전체 뷰포트 높이로 메인 비주얼의 높이 설정 */
+  overflow: hidden;
+  /* 비디오가 넘치지 않도록 설정 */
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(76, 65, 147, 0.65);
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    /* 비디오를 메인 비주얼의 전체 영역에 맞추기 */
+    object-fit: cover;
+    /* 비디오 비율을 유지하면서 비주얼에 맞게 확대 또는 축소 */
+  }
+
+  .main_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // outline: 1px solid red;
+
+    .main_slogan {
+      color: $white;
+      font-family: "Poppins", "Roboto", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 0 100px 0;
+      //   outline: 1px solid red;
+
+      h3 {
+        font-size: 11rem;
+        font-weight: $fw_bold;
+        margin: 0 0 10px 0;
+      }
+
+      strong {
+        font-size: 7.6rem;
+        font-weight: $fw_bold;
+        display: block;
+        margin: 0 0 50px 0;
+      }
+
+      p {
+        font-size: 2.8rem;
+        font-weight: $fw_medium;
+        line-height: 1.54;
+      }
+    }
+
+    .go_to_service {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      button {
+        background: #222;
+        border-radius: 50px;
+        font-size: 2rem;
+        font-weight: $fw_bold;
+        color: $white;
+        padding: 15px 70px 17px 70px;
+      }
+    }
+  }
+
+  .scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(0, 0);
+    z-index: 9999;
+
+    .line {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(0, 0);
+      width: 1px;
+      height: 100px;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        // transform: translate(25%, 0);
+        width: 1px;
+        height: 0;
+        background-color: $white;
+        animation: lineloof 3s infinite;
+      }
+    }
+  }
+
+  @keyframes lineloof {
+    0% {
+      height: 0;
+    }
+
+    100% {
+      height: 100%;
+    }
+  }
+}

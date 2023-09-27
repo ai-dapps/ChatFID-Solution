@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.PaymentSystem,
+.ExamlpeCase,
+.ApiDocument {
+  height: 800px;
+}
+
+footer {
+  height: 600px;
+  background: #222;
+  color: #fff;
+}
