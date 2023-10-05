@@ -1,0 +1,54 @@
+@import "./variable";
+@import "./mixin";
+
+.ApiDocument {
+  padding: 200px 0;
+  background: url(../../../public/assets/apidocument_bg.jpg) fixed no-repeat
+    center center/cover;
+
+  .content_text_wrapper {
+    @include inner;
+    padding: 0 20px;
+    color: $white;
+    text-align: center;
+
+    .content_text {
+      margin: 0 0 50px 0;
+      p {
+        font-size: 5.4rem;
+        font-weight: $fw_light;
+        line-height: 1.5;
+
+        span {
+          font-weight: $fw_bold;
+          color: #b8f9ff;
+        }
+      }
+    }
+
+    .go {
+      text-align: center;
+      button {
+        background: #222;
+        border-radius: 50px;
+        font-size: 2rem;
+        font-weight: $fw_bold;
+        color: $white;
+        padding: 15px 30px 17px 70px;
+        transition: 0.3s;
+
+        svg {
+          font-size: 25px;
+          vertical-align: -5px;
+          margin: 0 0 0 30px;
+        }
+
+        &:hover {
+          background: $white;
+          color: $main_color;
+          box-shadow: 0px 0px 20px 0px #b5a9ff;
+        }
+      }
+    }
+  }
+}

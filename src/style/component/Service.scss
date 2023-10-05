@@ -4,7 +4,7 @@
 .Service {
   .content_wrapper {
     @include inner;
-    padding: 130px 0;
+    padding: 130px 0 190px 0;
 
     .content_text {
       display: flex;
@@ -23,6 +23,41 @@
 
     .content_item_wrapper {
       .slick-slider {
+        .slick-dots {
+          // outline: 1px solid red;
+          bottom: -60px;
+
+          li {
+            // outline: 1px solid red;
+            width: 60px;
+            height: 10px;
+            margin: 0 auto;
+
+            &.slick-active button::before {
+              content: "";
+              width: 60px;
+              height: 8px;
+              background: $main_color;
+              border-radius: 10px;
+              opacity: 1;
+              transition: 0.2s;
+            }
+
+            button {
+              &::before {
+                content: "";
+                width: 40px;
+                height: 8px;
+                background: #ece9ff;
+                border-radius: 10px;
+                opacity: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
         .slick-list {
           .slick-slide {
             & > div {

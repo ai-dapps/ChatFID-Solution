@@ -1,0 +1,136 @@
+@import "./variable";
+@import "./mixin";
+
+.PaymentSystem {
+  background: $main_color;
+  .content_wrapper {
+    @include inner;
+    padding: 130px 0;
+
+    .content_text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+
+      .content_title {
+        display: inline-block;
+        position: relative;
+        font-size: 70px;
+        font-weight: $fw_bold;
+        margin: 0 0 40px 0;
+        padding: 0 0 0 35px;
+        //   outline: 1px solid red;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: #aa9dff;
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: #5446b2;
+          margin: 0 0 0 25px;
+        }
+        color: $white;
+      }
+
+      .content_desc {
+        @include content_desc;
+        color: $white;
+      }
+    }
+
+    .content_item_wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 80px;
+      font-family: "Poppins", "Roboto", sans-serif;
+      margin: 0 0 40px 0;
+      padding: 0 20px;
+
+      .content_item {
+        display: flex;
+        justify-content: space-between;
+        color: $white;
+        border-top: 1px solid #aa9dff;
+        padding: 60px 0;
+
+        .content_item_01 {
+          padding: 0 0 0 30px;
+          strong {
+            display: block;
+            margin: 0 0 30px 0;
+            font-size: 6.4rem;
+            font-weight: $fw_medium;
+          }
+
+          span {
+            display: block;
+            font-size: 3rem;
+            font-weight: $fw_light;
+
+            em {
+              font-size: 2.4rem;
+              color: #5446b2;
+              font-family: "Noto Sans KR", "Poppins", "Roboto", sans-serif;
+            }
+          }
+        }
+
+        .content_item_02 {
+          padding: 0 60px 0 0;
+          font-size: 2.4rem;
+          font-weight: $fw_light;
+          li {
+            position: relative;
+            margin: 0 0 30px 0;
+
+            &:last-child {
+              margin: 0;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: -15px;
+              width: 4px;
+              height: 4px;
+              background: $white;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .inquiry {
+      text-align: center;
+      button {
+        background: #222;
+        border-radius: 50px;
+        font-size: 2rem;
+        font-weight: $fw_bold;
+        color: $white;
+        padding: 15px 70px 17px 70px;
+        transition: 0.3s;
+
+        &:hover {
+          background: $white;
+          color: $main_color;
+          box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+}

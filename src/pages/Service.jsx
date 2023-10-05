@@ -21,44 +21,48 @@ const Service = () => {
     arrows: false,
     dots: true,
     infinite: true,
-    speed: 500,
-    afterChange: (idx) => setSNum(idx),
-    responsive: [
-      {
-        breakpoint: 1368,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    autoplay: true,
+    // 슬라이드 변경 시간
+    speed: 1000,
+    // 자동 재생 유지 시간
+    autoplaySpeed: 6000,
+    // afterChange: (idx) => setSNum(idx),
+    // responsive: [
+    //   {
+    //     breakpoint: 1368,
+    //     settings: {
+    //       slidesToShow: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 767,
+    //     settings: {
+    //       slidesToShow: 1,
+    //     },
+    //   },
+    // ],
   };
 
-  const s = useRef(null);
-  const [sNum, setSNum] = useState();
-  useEffect(() => {
-    setSNum(0);
-  }, []);
+  // const s = useRef(null);
+  // const [sNum, setSNum] = useState();
+  // useEffect(() => {
+  //   setSNum(0);
+  // }, []);
 
-  const [isPrevActive, setIsPrevActive] = useState(false);
-  const [isNextActive, setIsNextActive] = useState(false);
+  // const [isPrevActive, setIsPrevActive] = useState(false);
+  // const [isNextActive, setIsNextActive] = useState(false);
 
-  const handlePrevClick = () => {
-    s.current.slickPrev();
-    setIsPrevActive(true);
-    setIsNextActive(false);
-  };
+  // const handlePrevClick = () => {
+  //   s.current.slickPrev();
+  //   setIsPrevActive(true);
+  //   setIsNextActive(false);
+  // };
 
-  const handleNextClick = () => {
-    s.current.slickNext();
-    setIsPrevActive(false);
-    setIsNextActive(true);
-  };
+  // const handleNextClick = () => {
+  //   s.current.slickNext();
+  //   setIsPrevActive(false);
+  //   setIsNextActive(true);
+  // };
 
   return (
     <Element name="Service" className="Service">
@@ -71,7 +75,7 @@ const Service = () => {
           </p>
         </div>
         <div className="content_item_wrapper">
-          <Slide {...sliderSettings} ref={s}>
+          <Slide {...sliderSettings}>
             <div className="slide_item_wrapper">
               <div className="slide_item">
                 <img

@@ -1,0 +1,154 @@
+@import "./variable";
+@import "./mixin";
+
+footer {
+  padding: 100px 0;
+  background: #222;
+  color: #fff;
+
+  .footer_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    @include inner;
+    padding: 0 20px;
+
+    .to_top {
+      position: absolute;
+      top: -165px;
+      left: 20px;
+
+      button {
+        width: 65px;
+        height: 65px;
+        background: #27262c;
+        svg {
+          font-size: 30px;
+          vertical-align: -10px;
+        }
+      }
+    }
+
+    .footer_left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .footer_left_01 {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        margin: 0 0 60px 0;
+        img {
+          width: 200px;
+        }
+
+        ul {
+          display: flex;
+          font-size: 1.6rem;
+          font-weight: $fw_medium;
+
+          li {
+            margin: 0 15px 0 0;
+          }
+
+          li ~ li:before {
+            display: inline-block;
+            content: "";
+            width: 1px;
+            height: 12px;
+            background: #888888;
+            margin: 0 15px 0 0;
+          }
+        }
+      }
+
+      .footer_left_02 {
+        margin: 0 0 40px 0;
+
+        .company_info {
+          color: #999999;
+          font-size: 1.6rem;
+          li {
+            margin: 0 0 20px 0;
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .copyright {
+        font-size: 2rem;
+        font-weight: $fw_light;
+        font-family: "Poppins", "Roboto", sans-serif;
+      }
+    }
+
+    .footer_right {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      .footer_right_01 {
+        display: flex;
+        font-family: "Poppins", "Roboto", sans-serif;
+        margin: 0 0 30px 0;
+
+        span {
+          display: block;
+          font-size: 2.4rem;
+
+          &:first-child {
+            font-weight: $fw_semi_bold;
+
+            &::after {
+              display: inline-block;
+              content: "";
+              width: 1px;
+              height: 16px;
+              background: #888888;
+              margin: 0 20px;
+            }
+          }
+        }
+      }
+
+      .sns {
+        display: flex;
+        gap: 15px;
+        margin: 0 0 30px 0;
+
+        a {
+          transition: 0.3s;
+
+          &:hover {
+            filter: brightness(1.8);
+          }
+        }
+      }
+
+      .family_site {
+        #f_link {
+          font-size: 1.5rem;
+          font-family: "Poppins", "Roboto", sans-serif;
+          border: none;
+          outline: none;
+          padding: 10px 30px;
+          background: #222;
+          border: 1px solid #7a7a7a;
+          color: #999999;
+
+          width: 200px; /* 원하는 너비설정 */
+          background: url(../../../public/assets/family_site_arrow.png)
+            no-repeat 90% 55%; /* 네이티브 화살표 대체 */
+          border-radius: 10px;
+          -webkit-appearance: none; /* 네이티브 외형 감추기 */
+          -moz-appearance: none;
+          appearance: none;
+        }
+      }
+    }
+  }
+}
